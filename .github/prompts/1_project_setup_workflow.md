@@ -15,11 +15,13 @@ project following established standards with minimal redundancy and maximum effi
 **Execute Sequential Steps:**
 
 1. **Project Structure Creation** (`components/project_structure_generator.md`)
+
    - Create directory structure based on project type
    - Generate core configuration files (package.json, tsconfig.json, playwright.config.ts)
    - Setup environment files (.env.example, .env)
 
 2. **Code Quality Rules Setup** (`components/rules_generator.md`)
+
    - Generate ESLint configuration with TypeScript best practices
    - Setup Prettier for consistent code formatting
    - Configure Husky for pre-commit quality gates
@@ -27,11 +29,13 @@ project following established standards with minimal redundancy and maximum effi
    - Install and configure all quality tools dependencies
 
 3. **Infrastructure Generation** (`components/config_generator.md`)
+
    - Generate authentication fixtures based on project type
    - Create site/role-specific configurations
    - Setup CI/CD integration files
 
 4. **Utilities Creation** (`components/utils_generator.md`)
+
    - Create AuthManager for project type (multi-site or single-site-multi-role)
    - Build test utilities and helper functions
    - Generate environment validation utilities
@@ -68,55 +72,55 @@ Collect comprehensive project information before Phase 1:
 **Multi-Site Project:**
 
 ```yaml
-project_type: "multi-site"
-project_name: "enjapan-playwright"
+project_type: 'multi-site'
+project_name: 'enjapan-playwright'
 sites:
-  - name: "ea-mypage"
-    base_url: "https://ea-web-staging.enagent.com"
-    login_url: "https://ea-web-staging.enagent.com/login"
+  - name: 'ea-mypage'
+    base_url: 'https://ea-web-staging.enagent.com'
+    login_url: 'https://ea-web-staging.enagent.com/login'
     auth_fields:
-      - name: "email"
-        env_var: "EA_MYPAGE_EMAIL"
-        example: "user@example.com"
-      - name: "password"
-        env_var: "EA_MYPAGE_PASSWORD"
-        example: "password123"
-  - name: "enfit"
-    base_url: "https://enfit-staging.example.com"
-    login_url: "https://enfit-staging.example.com/signin"
+      - name: 'email'
+        env_var: 'EA_MYPAGE_EMAIL'
+        example: 'user@example.com'
+      - name: 'password'
+        env_var: 'EA_MYPAGE_PASSWORD'
+        example: 'password123'
+  - name: 'enfit'
+    base_url: 'https://enfit-staging.example.com'
+    login_url: 'https://enfit-staging.example.com/signin'
     auth_fields:
-      - name: "username"
-        env_var: "ENFIT_USERNAME"
-        example: "admin"
-      - name: "password"
-        env_var: "ENFIT_PASSWORD"
-        example: "adminpass"
+      - name: 'username'
+        env_var: 'ENFIT_USERNAME'
+        example: 'admin'
+      - name: 'password'
+        env_var: 'ENFIT_PASSWORD'
+        example: 'adminpass'
 ```
 
 **Single-Site Multi-Role Project:**
 
 ```yaml
-project_type: "single-site-multi-role"
-project_name: "auto-proever-tests"
-base_url: "https://auto-proever.sun-asterisk.vn"
-login_url: "https://auto-proever.sun-asterisk.vn/login"
+project_type: 'single-site-multi-role'
+project_name: 'auto-proever-tests'
+base_url: 'https://auto-proever.sun-asterisk.vn'
+login_url: 'https://auto-proever.sun-asterisk.vn/login'
 roles:
-  - name: "admin"
+  - name: 'admin'
     auth_fields:
-      - name: "email"
-        env_var: "ADMIN_EMAIL"
-        example: "admin@example.com"
-      - name: "password"
-        env_var: "ADMIN_PASSWORD"
-        example: "admin123"
-  - name: "user"
+      - name: 'email'
+        env_var: 'ADMIN_EMAIL'
+        example: 'admin@example.com'
+      - name: 'password'
+        env_var: 'ADMIN_PASSWORD'
+        example: 'admin123'
+  - name: 'user'
     auth_fields:
-      - name: "email"
-        env_var: "USER_EMAIL"
-        example: "user@example.com"
-      - name: "password"
-        env_var: "USER_PASSWORD"
-        example: "user123"
+      - name: 'email'
+        env_var: 'USER_EMAIL'
+        example: 'user@example.com'
+      - name: 'password'
+        env_var: 'USER_PASSWORD'
+        example: 'user123'
 ```
 
 ## Execution Rules

@@ -1,9 +1,9 @@
-import { Page } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 export class LoginPage {
   readonly page: Page;
   readonly profileLink: Locator;
-  
+
   constructor(page: Page) {
     this.page = page;
     this.profileLink = page.locator('a:has-text("Profile")');

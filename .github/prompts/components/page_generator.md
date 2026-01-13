@@ -57,8 +57,8 @@ dashboard,
 
 **Always use kebab-case for all file names**
 
-- **Selector files**: `locales/ja/selectors/{feature-name}.json` 
-- **Page object files**: `pages/{site}//{feature-name}/index.ts` 
+- **Selector files**: `locales/ja/selectors/{feature-name}.json`
+- **Page object files**: `pages/{site}//{feature-name}/index.ts`
 - **Test files**: `tests/{site}/{feature-name}.spec.ts`
 - **Data files**: `locales/ja/data/{feature-name}.json`
 

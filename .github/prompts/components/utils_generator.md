@@ -23,13 +23,13 @@ Generate AuthManager class based on project type:
 
 ```typescript
 // utils/auth.ts - Dynamic generation based on sites configuration
-import { readFileSync, existsSync, mkdirSync } from "fs";
-import { join } from "path";
-import { Encoding, SiteType } from "@/enums/common";
+import { readFileSync, existsSync, mkdirSync } from 'fs';
+import { join } from 'path';
+import { Encoding, SiteType } from '@/enums/common';
 
 export class AuthManager {
   private static instance: AuthManager;
-  private storageStateDir = "./auth";
+  private storageStateDir = './auth';
 
   private constructor() {
     this.ensureAuthDirectoryExists();
@@ -69,7 +69,7 @@ export class AuthManager {
   async clearAuthState(site: SiteType): Promise<void> {
     const storageStatePath = this.getStorageStatePath(site);
     if (existsSync(storageStatePath)) {
-      require("fs").unlinkSync(storageStatePath);
+      require('fs').unlinkSync(storageStatePath);
     }
   }
 
@@ -85,14 +85,14 @@ export class AuthManager {
 
 ```typescript
 // utils/auth.ts - Dynamic generation based on roles configuration
-import { expect, Page } from "@playwright/test";
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { join } from "path";
-import { Encoding, RoleType } from "@/enums/common";
-import { SigninPage } from "@/pages/signin";
-import { ROUTES } from "@/constants/routes";
-import { authConfig } from "@/tests/configs/auth";
-import { JSON_INDENTATION } from "@/constants/common";
+import { expect, Page } from '@playwright/test';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { join } from 'path';
+import { Encoding, RoleType } from '@/enums/common';
+import { SigninPage } from '@/pages/signin';
+import { ROUTES } from '@/constants/routes';
+import { authConfig } from '@/tests/configs/auth';
+import { JSON_INDENTATION } from '@/constants/common';
 
 export class AuthManager {
   private static instance: AuthManager;
@@ -124,12 +124,12 @@ export class AuthManager {
 
     const signinPage = new SigninPage(page);
     await signinPage.goto();
-    await page.waitForURL(url => url.hostname.includes(url));
+    await page.waitForURL((url) => url.hostname.includes(url));
     await signinPage.enterEmail(credentials.email);
     await signinPage.enterPassword(credentials.password);
-    await signinPage.confirmModeStaySignin(false, "No");
+    await signinPage.confirmModeStaySignin(false, 'No');
 
-    await page.waitForURL(url => url.pathname.includes(url));
+    await page.waitForURL((url) => url.pathname.includes(url));
     await expect(signinPage.dashboardHeading).toBeVisible();
 
     const storageState = await page.context().storageState();
@@ -151,7 +151,7 @@ export class AuthManager {
   async clearAuthState(role: RoleType): Promise<void> {
     const storageStatePath = this.getStorageStatePath(role);
     if (existsSync(storageStatePath)) {
-      require("fs").unlinkSync(storageStatePath);
+      require('fs').unlinkSync(storageStatePath);
     }
   }
 

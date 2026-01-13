@@ -192,7 +192,7 @@ const submitBtn = page.locator(selector.btn.submit);
 // Variable 'submitBtn' is assigned but never used
 
 // ✅ Fix 1: Sử dụng variable
-const locator = page.locator("#button");
+const locator = page.locator('#button');
 await locator.click();
 ```
 
@@ -206,7 +206,7 @@ pnpm lint  # Tự động fix nhiều lỗi
 
 ```typescript
 // ❌ Lỗi
-console.log("Debug info");
+console.log('Debug info');
 
 // ✅ Fix: Xóa hoặc comment
 // console.log('Debug info');
@@ -216,10 +216,10 @@ console.log("Debug info");
 
 ```typescript
 // ❌ Lỗi
-let userName = "test@example.com";
+let userName = 'test@example.com';
 
 // ✅ Fix
-const userName = "test@example.com";
+const userName = 'test@example.com';
 ```
 
 ### Lỗi TypeScript
@@ -228,7 +228,7 @@ const userName = "test@example.com";
 
 ```typescript
 // ❌ Lỗi
-const count: number = "abc"; // Type 'string' is not assignable to type 'number'
+const count: number = 'abc'; // Type 'string' is not assignable to type 'number'
 
 // ✅ Fix
 const count: number = 123;
@@ -238,7 +238,7 @@ const count: number = 123;
 
 ```typescript
 // ❌ Lỗi
-const user = { name: "John" };
+const user = { name: 'John' };
 console.log(user.email); // Property 'email' does not exist
 
 // ✅ Fix 1: Sử dụng optional chaining
@@ -249,7 +249,7 @@ interface User {
   name: string;
   email?: string;
 }
-const user: User = { name: "John" };
+const user: User = { name: 'John' };
 ```
 
 ### Lỗi Prettier
@@ -378,7 +378,7 @@ git commit -m "Fix code quality issues"
 ```typescript
 // Warning: có thể ignore tạm thời nhưng nên fix
 /* eslint-disable-next-line no-console */
-console.log("Temporary debug");
+console.log('Temporary debug');
 
 // Error: bắt buộc phải fix mới commit được
 const user = getUser(); // Missing type annotation
